@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 12th Admission Form - BN Jha College</title>
+    <title>Class 12th Admission Form - Final</title>
     <style>
-        /* Reset and A4 Setup */
         * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
         body {
             font-family: Arial, sans-serif;
@@ -20,180 +19,101 @@
             width: 210mm;
             height: 297mm;
             background-color: white;
-            padding: 8mm 12mm; /* Reduced padding to fit 1 page */
+            padding: 10mm 15mm;
             border: 2px solid #000;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
             position: relative;
             color: #000;
         }
 
-        /* Header Area */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 3px solid #000;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
             margin-bottom: 12px;
         }
 
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .qr-box {
-            width: 30mm;
-            height: 30mm;
+            width: 28mm;
+            height: 28mm;
             border: 2px solid #000;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .qr-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .college-info {
-            text-align: center;
-            flex: 1;
-        }
-        .college-name {
-            font-size: 20pt;
-            font-weight: 900;
-            margin: 0;
-            text-transform: uppercase;
-        }
-        .sub-header {
-            font-size: 11pt;
-            font-weight: 800;
-            margin: 4px 0;
-        }
-        .form-title {
-            background-color: #000;
-            color: #fff;
-            padding: 4px 15px;
-            display: inline-block;
-            font-weight: 900;
-            font-size: 13pt;
-            margin-top: 5px;
-        }
-
-        .photo-box {
-            width: 32mm;
-            height: 40mm;
-            border: 2px solid #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .qr-box img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .qr-text {
             font-size: 9pt;
             font-weight: bold;
+            margin-top: 4px;
+            text-decoration: underline;
         }
 
-        /* Form Content */
-        .top-row {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 900;
-            margin-bottom: 10px;
-            font-size: 10.5pt;
+        .college-info { text-align: center; flex: 1; }
+        .college-name { font-size: 20pt; font-weight: 900; margin: 0; }
+        .sub-header { font-size: 13pt; font-weight: bold; margin: 4px 0; }
+        .form-title { font-size: 12pt; font-weight: bold; margin-top: 4px; }
+
+        .photo-box {
+            width: 32mm; height: 42mm;
+            border: 2px solid #000;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; font-size: 10pt; font-weight: bold; color: #444;
+        }
+
+        .top-fields {
+            display: flex; justify-content: space-between;
+            font-weight: bold; font-size: 10.5pt; margin-bottom: 15px;
         }
 
         .section-title {
-            background-color: #e0e0e0;
-            border: 1.5px solid #000;
-            padding: 3px 10px;
-            font-weight: 900;
-            font-size: 10pt;
-            margin: 10px 0 8px 0;
-            text-transform: uppercase;
+            font-size: 11.5pt; font-weight: bold; margin: 15px 0 8px 0;
+            text-decoration: underline;
         }
 
-        .field-row {
-            display: flex;
-            margin-bottom: 8px;
-            align-items: baseline;
-        }
-        .label {
-            font-weight: 900;
-            min-width: 150px;
-            font-size: 10pt;
-        }
-        .line {
-            flex-grow: 1;
-            border-bottom: 1px solid #000;
-            height: 14px;
+        .field-row { display: flex; margin-bottom: 10px; align-items: baseline; }
+        .label { font-weight: bold; min-width: 150px; font-size: 10.5pt; }
+        .line { flex-grow: 1; border-bottom: 1px solid #000; height: 14px; }
+
+        .char-box {
+            display: inline-block; width: 18px; height: 18px;
+            border: 1px solid #000; margin-right: 2px;
+            text-align: center; line-height: 18px; font-size: 10pt;
         }
 
-        .flex-row {
-            display: flex;
-            gap: 20px;
-        }
+        .checkbox-group { display: flex; gap: 15px; font-weight: bold; font-size: 10.5pt; align-items: center; }
+        .checkbox { width: 14px; height: 14px; border: 1.5px solid #000; display: inline-block; margin-right: 4px; }
 
-        /* Checkbox style */
-        .box-group {
-            display: flex;
-            gap: 15px;
-            font-weight: 900;
-            font-size: 9.5pt;
-        }
-        .check-box {
-            width: 14px;
-            height: 14px;
-            border: 1.5px solid #000;
-            display: inline-block;
-            margin-right: 4px;
-            vertical-align: middle;
-        }
-
-        /* Subjects Grid */
-        .subject-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        /* Declaration */
         .declaration {
-            border: 1.5px solid #000;
-            padding: 8px;
-            font-size: 9pt;
-            line-height: 1.4;
-            font-weight: 800;
-            margin-top: 10px;
-            text-align: justify;
+            font-size: 10.5pt; line-height: 1.4; margin-top: 20px;
+            font-weight: bold; text-align: justify;
         }
 
-        /* Footer */
-        .footer-sigs {
-            margin-top: 35px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .sig-item {
-            text-align: center;
-            width: 180px;
-            border-top: 2px solid #000;
-            padding-top: 5px;
-            font-weight: 900;
-            font-size: 10pt;
+        .footer-sigs { display: flex; justify-content: space-between; margin-top: 50px; }
+        .sig-box {
+            text-align: center; width: 200px;
+            border-top: 1px solid #000; padding-top: 5px;
+            font-weight: bold; font-size: 10.5pt;
         }
 
         .print-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #000;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            z-index: 100;
+            position: fixed; top: 20px; right: 20px;
+            background: #000; color: #fff; padding: 10px 20px;
+            border: none; cursor: pointer; font-weight: bold; z-index: 100;
         }
 
         @media print {
             body { background: none; padding: 0; }
             .print-btn { display: none; }
-            .a4-page { box-shadow: none; border: 2px solid #000; margin: 0; width: 100%; }
+            .a4-page { box-shadow: none; border: none; margin: 0; width: 100%; height: 100%; }
         }
     </style>
 </head>
@@ -203,27 +123,27 @@
 
     <div class="a4-page">
         <div class="header">
-            <div class="qr-box">
-                <img src="Qr.jpg" alt="QR Code">
+            <div class="qr-container">
+                <div class="qr-box">
+                    <img src="Qr.jpg" alt="QR Code">
+                </div>
+                <div class="qr-text">पेन नंबर खोजें</div>
             </div>
             
             <div class="college-info">
-                <h1 class="college-name">पं. बी. एन. झा मेमोरियल इंटर कॉलेज</h1>
-                <p class="sub-header">देवघर, झारखण्ड - 814112</p>
-                <div class="form-title">कक्षा 12वीं प्रवेश प्रपत्र (सत्र: 2026-2027)</div>
+                <h1 class="college-name">पं. बी. एन. झा मेमोरियल इंटर कॉलेज, देवघर</h1>
+                <div class="form-title">कक्षा 12वीं प्रवेश प्रपत्र (सत्र: 20__ - 20__)</div>
             </div>
-
-            <div class="photo-box">
-                PHOTO
-            </div>
+            <div class="photo-box">Passport<br>Photo</div>
         </div>
 
-        <div class="top-row">
-            <span>फॉर्म नं: ___________________</span>
-            <span>UTR / Transaction No: __________________________</span>
+        <div class="top-fields">
+            <span>फॉर्म नं: ___________ (कार्यालय उपयोग हेतु)</span>
+            <span>UTR: _______________________</span>
+            <span>Class Roll No: ____________</span>
         </div>
 
-        <div class="section-title">1. व्यक्तिगत जानकारी (Personal Details)</div>
+        <div class="section-title">1. व्यक्तिगत जानकारी</div>
         
         <div class="field-row">
             <span class="label">छात्र / छात्रा का नाम:</span>
@@ -235,31 +155,45 @@
             <span class="line"></span>
         </div>
 
-        <div class="flex-row">
-            <div class="field-row" style="flex: 2;">
-                <span class="label" style="min-width: 140px;">PEN NO (Permanent Education No):</span>
-                <span class="line"></span>
-            </div>
-            <div class="field-row" style="flex: 1;">
-                <span class="label" style="min-width: 80px;">जन्म तिथि:</span>
-                <span class="line"></span>
+        <div class="field-row">
+            <span class="label">Aadhar No (आधार):</span>
+            <div>
+                <span class="char-box"></span><span class="char-box"></span><span class="char-box"></span><span class="char-box"></span>&nbsp;&nbsp;
+                <span class="char-box"></span><span class="char-box"></span><span class="char-box"></span><span class="char-box"></span>&nbsp;&nbsp;
+                <span class="char-box"></span><span class="char-box"></span><span class="char-box"></span><span class="char-box"></span>
             </div>
         </div>
 
         <div class="field-row">
-            <span class="label">लिंग (Gender):</span>
-            <div class="box-group">
-                <span><span class="check-box"></span> पुरुष</span>
-                <span><span class="check-box"></span> महिला</span>
-                <span><span class="check-box"></span> अन्य</span>
+            <span class="label">स्थायी शिक्षा संख्या (PEN No.):</span>
+            <span class="line"></span>
+        </div>
+
+        <div class="field-row">
+            <span class="label">जन्म तिथि:</span>
+            <span class="line" style="margin-right: 20px;"></span>
+            <span class="label" style="min-width: 50px;">लिंग:</span>
+            <div class="checkbox-group">
+                <span><span class="checkbox"></span> पुरुष</span>
+                <span><span class="checkbox"></span> महिला</span>
             </div>
-            <span class="label" style="min-width: 100px; margin-left: 50px;">जाति / वर्ग:</span>
-            <div class="box-group">
-                <span><span class="check-box"></span> Gen</span>
-                <span><span class="check-box"></span> SC</span>
-                <span><span class="check-box"></span> ST</span>
-                <span><span class="check-box"></span> BC-I</span>
-                <span><span class="check-box"></span> BC-II</span>
+        </div>
+
+        <div class="field-row">
+            <span class="label">JAC Reg. No:</span>
+            <span class="line" style="margin-right: 20px;"></span>
+            <span class="label" style="min-width: 90px;">JAC Roll No:</span>
+            <span class="line"></span>
+        </div>
+
+        <div class="field-row">
+            <span class="label">जाति / वर्ग:</span>
+            <div class="checkbox-group">
+                <span><span class="checkbox"></span> सामान्य (Gen)</span>
+                <span><span class="checkbox"></span> SC</span>
+                <span><span class="checkbox"></span> ST</span>
+                <span><span class="checkbox"></span> BC-I</span>
+                <span><span class="checkbox"></span> BC-II</span>
             </div>
         </div>
 
@@ -273,60 +207,42 @@
             <span class="line"></span>
         </div>
 
-        <div class="section-title">2. संकाय (Stream) और विषय विवरण</div>
+        <div class="section-title">2. संकाय (Stream) और विषय विवरण (Subject Details)</div>
 
-        <div class="field-row">
-            <span class="label" style="min-width: 200px;">संकाय का चयन करें:</span>
-            <div class="box-group">
-                <span><span class="check-box"></span> विज्ञान (Science)</span>
-                <span><span class="check-box"></span> वाणिज्य (Commerce)</span>
-                <span><span class="check-box"></span> कला (Arts)</span>
+        <div class="field-row" style="margin-bottom: 12px;">
+            <span class="label" style="min-width: 250px;">कृपया अपने संकाय पर सही [✓] का निशान लगाएँ:</span>
+            <div class="checkbox-group">
+                <span><span class="checkbox"></span> विज्ञान (Science)</span>
+                <span><span class="checkbox"></span> वाणिज्य (Commerce)</span>
+                <span><span class="checkbox"></span> कला (Arts)</span>
             </div>
         </div>
 
-        <div style="font-weight: 900; margin-bottom: 8px; text-decoration: underline; font-size: 10pt;">चयनित विषय (Selected Subjects):</div>
+        <div style="font-weight: bold; font-size: 10.5pt; margin-bottom: 8px;">चयनित विषय (Selected Subjects):</div>
         
         <div class="field-row">
-            <span class="label">अनिवार्य भाषा (Core):</span>
+            <span class="label">कोर / अनिवार्य भाषा (Core Language):</span>
             <span class="line"></span>
+            <span style="font-weight: normal; font-size: 9.5pt; margin-left: 10px;">(उदा: Hindi/English/Sanskrit)</span>
         </div>
 
-        <div class="subject-grid">
-            <div class="field-row">
-                <span class="label" style="min-width: 120px;">ऐच्छिक विषय 1:</span>
-                <span class="line"></span>
-            </div>
-            <div class="field-row">
-                <span class="label" style="min-width: 120px;">ऐच्छिक विषय 2:</span>
-                <span class="line"></span>
-            </div>
-            <div class="field-row">
-                <span class="label" style="min-width: 120px;">ऐच्छिक विषय 3:</span>
-                <span class="line"></span>
-            </div>
-            <div class="field-row">
-                <span class="label" style="min-width: 120px;">अतिरिक्त (Extra):</span>
-                <span class="line"></span>
-            </div>
-        </div>
+        <div class="field-row"><span class="label">ऐच्छिक विषय 1 (Elective 1):</span><span class="line"></span></div>
+        <div class="field-row"><span class="label">ऐच्छिक विषय 2 (Elective 2):</span><span class="line"></span></div>
+        <div class="field-row"><span class="label">ऐच्छिक विषय 3 (Elective 3):</span><span class="line"></span></div>
+        <div class="field-row"><span class="label">अतिरिक्त विषय (Additional - यदि हो):</span><span class="line"></span></div>
 
         <div class="declaration">
-            <strong>घोषणा (Declaration):</strong> मैं प्रमाणित करता / करती हूँ कि ऊपर दी गई सभी जानकारी मेरी जानकारी के अनुसार पूर्णतः सत्य है। यदि कोई जानकारी गलत पाई जाती है, तो मेरा नामांकन रद्द किया जा सकता है।
+            घोषणा: मैं प्रमाणित करता / करती हूँ कि ऊपर दी गई सभी जानकारी मेरी जानकारी के अनुसार पूर्णतः सत्य है।
         </div>
 
-        <div class="field-row" style="margin-top: 15px; width: 200px;">
+        <div class="field-row" style="margin-top: 15px; width: 250px;">
             <span class="label" style="min-width: 60px;">दिनांक:</span>
             <span class="line"></span>
         </div>
 
         <div class="footer-sigs">
-            <div class="sig-item">अभिभावक के हस्ताक्षर</div>
-            <div class="sig-item">छात्र / छात्रा के हस्ताक्षर</div>
-            <div class="sig-item">प्राचार्य के हस्ताक्षर</div>
-        </div>
-
-        <div style="text-align: center; font-size: 8pt; margin-top: 15px; border-top: 1px dashed #000; padding-top: 5px; font-weight: bold;">
-            FOR OFFICE USE ONLY: Registration Verified by ____________________ Date: ____________________
+            <div class="sig-box">पिता / अभिभावक के हस्ताक्षर</div>
+            <div class="sig-box">छात्र / छात्रा के हस्ताक्षर</div>
         </div>
     </div>
 </body>
