@@ -110,6 +110,13 @@
             border: none; cursor: pointer; font-weight: bold; z-index: 100;
         }
 
+        .subject-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 30px;
+            margin-top: 10px;
+        }
+
         @media print {
             body { background: none; padding: 0; }
             .print-btn { display: none; }
@@ -127,7 +134,7 @@
                 <div class="qr-box">
                     <img src="Qr.jpg" alt="QR Code">
                 </div>
-                <div class="qr-text">पेन नंबर खोजें</div>
+                <div class="qr-text">PEN no. khojen</div>
             </div>
             
             <div class="college-info">
@@ -220,16 +227,14 @@
 
         <div style="font-weight: bold; font-size: 10.5pt; margin-bottom: 8px;">चयनित विषय (Selected Subjects):</div>
         
-        <div class="field-row">
-            <span class="label">कोर / अनिवार्य भाषा (Core Language):</span>
-            <span class="line"></span>
-            <span style="font-weight: normal; font-size: 9.5pt; margin-left: 10px;">(उदा: Hindi/English/Sanskrit)</span>
+        <div class="subject-grid">
+            <div class="field-row"><span class="label" style="min-width: 30px;">1.</span><span class="line"></span></div>
+            <div class="field-row"><span class="label" style="min-width: 30px;">4.</span><span class="line"></span></div>
+            <div class="field-row"><span class="label" style="min-width: 30px;">2.</span><span class="line"></span></div>
+            <div class="field-row"><span class="label" style="min-width: 30px;">5.</span><span class="line"></span></div>
+            <div class="field-row"><span class="label" style="min-width: 30px;">3.</span><span class="line"></span></div>
+            <div class="field-row"><span class="label" style="min-width: 30px;">6.</span><span class="line"></span></div>
         </div>
-
-        <div class="field-row"><span class="label">ऐच्छिक विषय 1 (Elective 1):</span><span class="line"></span></div>
-        <div class="field-row"><span class="label">ऐच्छिक विषय 2 (Elective 2):</span><span class="line"></span></div>
-        <div class="field-row"><span class="label">ऐच्छिक विषय 3 (Elective 3):</span><span class="line"></span></div>
-        <div class="field-row"><span class="label">अतिरिक्त विषय (Additional - यदि हो):</span><span class="line"></span></div>
 
         <div class="declaration">
             घोषणा: मैं प्रमाणित करता / करती हूँ कि ऊपर दी गई सभी जानकारी मेरी जानकारी के अनुसार पूर्णतः सत्य है।
